@@ -9,12 +9,16 @@ import SwiftUI
 
 @main
 struct SwiftfulCryptoApp: App {
+    
+    @StateObject private var homeViewModel = HomeViewModel()
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
                 HomeView()
                     .navigationBarHidden(true)
             }
+            .environmentObject(homeViewModel)
         }
     }
 }
